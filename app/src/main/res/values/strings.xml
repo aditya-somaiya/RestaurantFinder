@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">Restaurant Finder</string>
+    <string name="loginpage">LOGIN</string>
+    <string name="username">Username</string>
+    <string name="login">Login</string>
+    <string name="not_a_user_yet">Not a user yet?</string>
+    <string name="register"><u>Register</u></string>
+    <string name="registerpage">REGISTER</string>
+    <string name="register_button">Register</string>
+    <string name="already_a_user">Already a user? Login</string>
+    <string name="confirm_password">Confirm password</string>
+    <string name="guest">Guest</string>
+    <string name="guest_goto_text">Don\'t want to login? Continue as</string>
+    <string name="dream">Dream</string>
+    <string name="hello_welcome_back">HELLO, WELCOME BACK</string>
+    <string name="welcome">WELCOME</string>
+    <string name="first_name">First Name</string>
+    <string name="signup">SIGN UP</string>
+    <string name="login1">LOGIN</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="new_user_sign_up">New user? SIGN UP</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="welcome_to_dashboard">Welcome user, you are logged in</string>
+    <string name="sign_out">SIGN OUT</string>
+    <string name="discover_restaurants_in_your_city">Discover Restaurants in your City</string>
+    <string name="city_choose_text">Choose a city to see restaurants</string>
+    <string name="choose_a_profile_picture_from_your_device">Tap on camera and choose profile pic</string>
+    <string name="enter_display_name">Enter display name</string>
+    <string name="display_name">Display name</string>
+    <string name="save">Save</string>
+    <string name="user_profile_pic_change">user profile pic change</string>
+</resources>

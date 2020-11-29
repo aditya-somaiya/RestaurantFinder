@@ -1,63 +1,94 @@
 package com.example.restaurantfinder;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
 
-import android.app.Activity;
-import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
+import android.view.MenuItem;
 import android.widget.Button;
-import android.widget.Spinner;
-import android.widget.TextView;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class HomeActivity extends AppCompatActivity {
+    private DrawerLayout mNavDrawer;
     Button signOutButton;
-    TextView city_choice;
     FirebaseAuth mFirebaseAuth;
     private FirebaseAuth.AuthStateListener mAuthStateListener;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
-        city_choice = findViewById(R.id.city_choice);
+        setContentView(R.layout.nav_drawer_home);
 
-        signOutButton = findViewById(R.id.signout);
+        Toolbar toolbar = findViewById(R.id.mytoolbar);
+        setSupportActionBar(toolbar);
 
-        signOutButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FirebaseAuth.getInstance().signOut();
-                finish();
-                Intent toLogin = new Intent(HomeActivity.this, LoginActivity.class);
-                startActivity(toLogin);
+        mNavDrawer = findViewById(R.id.drawer_layout);
+        ActionBarDrawerToggle toggle= new ActionBarDrawerToggle(this, mNavDrawer, toolbar, R.string.open_nav_drawer, R.string.close_nav_drawer);
+
+        mNavDrawer.addDrawerListener(toggle);
+        toggle.syncState();
+
+        BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
+        bottomNav.setOnNavigationItemSelectedListener(navListener);
+
+//        signOutButton = findViewById(R.id.signout);
+
+//        signOutButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                FirebaseAuth.getInstance().signOut();
+//                finish();
+//                Intent toLogin = new Intent(HomeActivity.this, LoginActivity.class);
+//                startActivity(toLogin);
+//            }
+//        });
+    }
+    private BottomNavigationView.OnNavigationItemSelectedListener
+            navListener
+            = new BottomNavigationView.OnNavigationItemSelectedListener() {
+        @Override
+        public boolean onNavigationItemSelected(
+                @NonNull MenuItem item)
+        {
+            // By using switch we can easily get
+            // the selected fragment
+            // by using there id.
+            Fragment selectedFragment = null;
+            switch (item.getItemId()) {
+                case R.id.nav_list:
+                    selectedFragment = new ListFragment();
+                    break;
+                case R.id.nav_location:
+                    selectedFragment = new LocationFragment();
+                    break;
+                case R.id.nav_favorites:
+                    selectedFragment = new FavoritesFragment();
+                    break;
             }
-        });
-        Spinner spinner = (Spinner) findViewById(R.id.cities_list);
-// Create an ArrayAdapter using the string array and a default spinner layout
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-                R.array.cities_list, android.R.layout.simple_spinner_item);
-// Specify the layout to use when the list of choices appears
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-// Apply the adapter to the spinner
-        spinner.setAdapter(adapter);
+            // It will help to replace the one fragment to other.
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(
+                            R.id.fragment_container,
+                            selectedFragment)
+                    .commit();
+            return true;
+        }
+    };
 
-        class SpinnerActivity extends Activity implements AdapterView.OnItemSelectedListener {
-            public void onItemSelected(AdapterView<?> parent, View view,
-                                       int pos, long id) {
-                String show_city = (String) parent.getItemAtPosition(pos);
-                ((TextView) view).setTextColor(Color.RED);
-                city_choice.setText(""+show_city);
-            }
-
-            public void onNothingSelected(AdapterView<?> parent) {
-                // Another interface callback
-                city_choice.setText(R.string.city_choose_text);
-            }
+    @Override
+    public void onBackPressed() {
+        if(mNavDrawer.isDrawerOpen(GravityCompat.START)){
+            mNavDrawer.closeDrawer(GravityCompat.START);
+        }
+        else{
+            super.onBackPressed();
         }
     }
 }

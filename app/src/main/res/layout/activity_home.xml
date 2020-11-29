@@ -1,42 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center_horizontal"
-    android:padding="20dp"
-    android:background="#FFBF00"
-    tools:context=".HomeActivity">
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:textSize="18sp"
-        android:layout_height="wrap_content"
-        android:text="@string/welcome_to_dashboard"/>
-    <Button
-        android:id="@+id/signout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/sign_out"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:textSize="22sp"
-        android:text="@string/discover_restaurants_in_your_city"/>
-    <Spinner
-        android:id="@+id/cities_list"
-        android:layout_marginTop="5dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        />
-    <TextView
-        android:id="@+id/city_choice"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text=""/>
+    tools:context=".HomeActivity"
+    android:id="@+id/home_activity">
 
-</LinearLayout>
+    <include layout="@layout/appbar"/>
+
+<!--    <Button-->
+<!--        android:id="@+id/signout"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="@string/sign_out" />-->
+
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottom_navigation"
+        android:layout_below="@+id/mytoolbar" />
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        style="@style/Widget.MaterialComponents.BottomNavigationView.Colored"
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:layout_height="wrap_content"
+        app:menu="@menu/bottom_navigation" />
+
+</RelativeLayout>

@@ -29,6 +29,8 @@ import com.google.firebase.storage.UploadTask;
 import java.io.IOException;
 import java.util.Objects;
 
+import static android.widget.Toast.makeText;
+
 public class ProfileActivity extends AppCompatActivity {
     private static final int CHOOSE_IMAGE = 101;
     Button saveButton;
@@ -84,7 +86,7 @@ public class ProfileActivity extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             if(task.isSuccessful()){
-                                Toast.makeText(ProfileActivity.this, "Profile updated", Toast.LENGTH_SHORT).show();
+                                makeText(ProfileActivity.this, "Profile updated", Toast.LENGTH_SHORT).show();
                             }
                         }
                     });
@@ -104,6 +106,8 @@ public class ProfileActivity extends AppCompatActivity {
                 uploadImageToFirebaseStorage();
             } catch (IOException e) {
                 e.printStackTrace();
+                makeText(ProfileActivity.this, R.string.exception_error,Toast.LENGTH_SHORT).show();
+
             }
         }
     }
@@ -120,7 +124,7 @@ public class ProfileActivity extends AppCompatActivity {
                     .addOnFailureListener(new OnFailureListener() {
                         @Override
                         public void onFailure(@NonNull Exception e) {
-                            Toast.makeText(ProfileActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                            makeText(ProfileActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
                         }
                     });
         }

@@ -69,7 +69,7 @@ public class SignUp extends AppCompatActivity {
                                 if (task.isSuccessful()) {
                                     // Sign in success, update UI with the signed-in user's information
                                     FirebaseUser user = mAuth.getCurrentUser();
-                                    Intent toHome = new Intent(SignUp.this, HomeActivity.class);
+                                    Intent toHome = new Intent(SignUp.this, ProfileActivity.class);
                                     startActivity(toHome);
                                 }
                                 else {

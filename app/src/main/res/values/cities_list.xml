@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string-array name="cities_list">
-        <item>Mumbai</item>
-        <item>Pune</item>
-        <item>Thane</item>
-    </string-array>
-</resources>

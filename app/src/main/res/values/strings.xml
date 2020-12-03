@@ -1,5 +1,4 @@
 <resources>
-    <string name="app_name">Restaurant Finder</string>
     <string name="loginpage">LOGIN</string>
     <string name="username">Username</string>
     <string name="login">Login</string>
@@ -23,29 +22,40 @@
     <string name="email">Email</string>
     <string name="welcome_to_dashboard">Welcome user, you are logged in</string>
     <string name="sign_out">SIGN OUT</string>
-    <string name="discover_restaurants_in_your_city">Discover Restaurants in your City</string>
-    <string name="city_choose_text">Choose a city to see restaurants</string>
-    <string name="choose_a_profile_picture_from_your_device">Tap on camera and choose profile pic</string>
-    <string name="enter_display_name">Enter display name</string>
-    <string name="display_name">Display name</string>
-    <string name="save">Save</string>
-    <string name="user_profile_pic_change">user profile pic change</string>
-    <string name="exception_error">Exception error</string>
-    <string name="location">Location</string>
-    <string name="list_fragment">List Fragment</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="list">List</string>
-    <string name="favourites">Favourites</string>
-    <string name="message">Message</string>
-    <string name="chat">Chat</string>
-    <string name="profile">Profile</string>
-    <string name="communicate">Communicate</string>
-    <string name="share">Share</string>
-    <string name="send">Send</string>
-    <string name="coding_in_flow">Coding in flow</string>
-    <string name="adisomaiya_sa_gmail_com">adisomaiya.sa@gmail.com</string>
-    <string name="dream_restaurant_finder">Dream Restaurant Finder</string>
-    <string name="open_nav_drawer">Open navigation drawer</string>
-    <string name="close_nav_drawer">Close navigation drawer</string>
+
+
+    <string name="app_name">Dream Restaurant Finder</string>
+    <string name="dine_in">Dine-In</string>
+    <string name="take_out">Take-Out</string>
+    <string name="so_you_re_looking_for_food_eh">So you\'re looking for food, Eh?</string>
+    <string name="anything_you_can_t_eat">Anything you can\'t eat?</string>
+    <string name="dairy">Dairy</string>
+    <string name="gluten">Gluten</string>
+    <string name="meat">Meat</string>
+    <string name="fish">Fish</string>
+    <string name="what_tingles_your_taste_buds">What tingles your taste buds?</string>
+    <string name="next"><![CDATA[Next >]]></string>
+    <string name="bike">Bike</string>
+    <string name="transit">Transit</string>
+    <string name="drive">Drive</string>
+    <string name="walk">Walk</string>
+    <string name="how_are_you_getting_there">How are you getting there?</string>
+    <string name="search_for_a_location">Search For A Location</string>
+    <string name="use_current_location">Use Current Location</string>
+    <string name="from_where">From Where?</string>
+    <string name="how_far_are_you_willing_to_journey">How far are you willing to journey?</string>
+    <string name="indecision_shall_exist_no_more">Indecision Shall Exist No More!</string>
+    <string name="finding_the_best_food_for_you">Finding the best food for you…</string>
+
+
+    <string name="google_maps_api">AIzaSyBE3zgLJ3y6lM8q8IoTt6L9Y6zEMXp5hyQ</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="take_me_there">Take me there!</string>
+    <string name="dream_restaurant">Dream Restaurant</string>
+    <string name="find_me_food_needs_permission_to_access_your_location_to_provide_required_services_please_allow_this_permission_for_a_better_overall_experience_d">Find Me Food needs permission to access your location to provide required services. Please allow this permission for a better overall experience :D</string>
+    <string name="grant_permission">Grant Permission</string>
+    <string name="permission_required">Permission Required</string>
+    <string name="choose_a_profile_pic_from_your_device">Choose a profile pic from your device</string>
+    <string name="exception_error">This is an exception error</string>
+    <string name="done">DONE</string>
 </resources>
